@@ -14,7 +14,7 @@
   },
 
   "license": "GPL-3.0-or-later",
-  "icon": "",
+  "icon": "assets/anti18aktion/icon.png",
 
   "environment": "*",
   "entrypoints": {},
