@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "anti18aktion",
+  "version": "${version}",
+
+  "name": "Anti-1.8 Aktion",
+  "description": "\uD83E\uDD80 hunger is gone \uD83E\uDD80",
+  "authors": [
+
+  ],
+  "contact": {
+    "homepage": "https://sailor.green/",
+    "sources": "https://github.com/Fuyukai/anti1dot8aktion"
+  },
+
+  "license": "GPL-3.0-or-later",
+  "icon": "",
+
+  "environment": "*",
+  "entrypoints": {},
+  "mixins": [
+    "anti18aktion.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.4.0"
+  }
+}

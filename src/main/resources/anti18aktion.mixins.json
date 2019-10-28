@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "green.sailor.anti18.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "HungerManagerMixin",
+    "PlayerEntityMixin"
+  ],
+  "client": [
+    "InGameHudMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
