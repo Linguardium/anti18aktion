@@ -16,10 +16,10 @@ public class InGameHudMixin {
     // but if it's any other value, the hunger bar is simply not rendered.
     // so, we change it to -1 (which doesn't render it).
     @Redirect(
-            method = "renderStatusBars()V",
+            method = "renderStatusBars(Lnet/minecraft/client/util/math/MatrixStack;)V",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/gui/hud/InGameHud;method_1744(Lnet/minecraft/entity/LivingEntity;)I"
+                    target = "Lnet/minecraft/client/gui/hud/InGameHud;getHeartCount(Lnet/minecraft/entity/LivingEntity;)I"
             )
     )
     int proxy1744(InGameHud hud, LivingEntity ent) {

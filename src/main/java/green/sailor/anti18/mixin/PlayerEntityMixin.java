@@ -7,6 +7,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -40,7 +42,7 @@ abstract class PlayerEntityMixin {
             int hunger = fc.getHunger();
 
             StatusEffectInstance se = new StatusEffectInstance(StatusEffects.REGENERATION, 20 * hunger, 1);
-            us.addPotionEffect(se);
+            us.addStatusEffect(se);
         }
     }
 
@@ -52,7 +54,7 @@ abstract class PlayerEntityMixin {
     @Inject(method = "canConsume", at = @At("HEAD"), cancellable = true)
     void fixedCanConsume(boolean boolean_1, CallbackInfoReturnable<Boolean> cir) {
         PlayerEntity us = (PlayerEntity)(Object) this;
-        boolean can = !us.abilities.invulnerable && (boolean_1 || us.getHealth() < us.getHealthMaximum());
+        boolean can = !us.abilities.invulnerable && (boolean_1 || us.getHealth() < us.getMaxHealth());
         cir.setReturnValue(can);
     }
 
